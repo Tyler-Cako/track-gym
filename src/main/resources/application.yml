@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: track-531
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+jackson:
+  serialization:
+    indent_output: true
