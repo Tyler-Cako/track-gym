@@ -1,0 +1,14 @@
+{
+  "name": "tailwind",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  },
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./main.css -o ../resources/static/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3"
+  }
+}

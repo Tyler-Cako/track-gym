@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:fragment="layout (content)" xmlns:th="http://www.thymeleaf.org" class="min-h-screen">
+<head>
+    <title>Gym Tracker</title>
+    <link rel="stylesheet" th:href="@{/tailwind.css}" />
+</head>
+<body>
+<div th:replace="~{/fragments/navbar}"></div>
+<div th:replace="${content}">
+    <p>Layout content</p>
+</div>
+<footer class="absolute w-full bottom-0 flex justify-center items-center">
+    <p>Meow</p>
+</footer>
+</body>
+</html>
