@@ -8,15 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-<form action="POST" th:object=${workout}>
+<form method="POST" th:action="@{/workout}" th:object="${workout}">
     <h2 th:text="*{workoutName}">Workout Name</h2>
     <div th:each="exerciseCard : *{exerciseCards}">
         <h4 th:text="${exerciseCard.name}">Exercise Name</h4>
         <div th:each="splitCard : ${exerciseCard.splitCards}">
-            <label th:for=${splitCard.id} th:text="|Set: ${splitCard.weight}x${splitCard.reps}|">Set: x</label>
+            <label th:for="${splitCard.id}" th:text="|Set: ${splitCard.weight}x${splitCard.reps}|">Set: x</label>
             <input type="number" th:name="${splitCard.id}" />
         </div>
     </div>
+    <button type="submit">Submit</button>
 </form>
 </body>
+
+
 </html>

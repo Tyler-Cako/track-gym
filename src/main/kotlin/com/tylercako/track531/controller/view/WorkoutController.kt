@@ -1,20 +1,33 @@
 package com.tylercako.track531.controller.view
 
+import com.tylercako.track531.model.dto.SubmittedWorkout
 import com.tylercako.track531.model.view.ExerciseCard
 import com.tylercako.track531.model.view.SplitCard
 import com.tylercako.track531.model.view.WorkoutPage
+import lombok.extern.slf4j.Slf4j
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.SessionAttributes
 
 @Controller
 @SessionAttributes("workout")
+@RequestMapping("/workout")
+@Slf4j
 class WorkoutController {
 
-    @GetMapping("/workout")
+    @GetMapping()
     fun currentWorkout(): String {
         return "workout/currentWorkout";
+    }
+
+    @PostMapping()
+    fun submitWorkout(submittedWorkout: SubmittedWorkout, @ModelAttribute workout: WorkoutPage): String {
+
+
+        return "redirect:/workout/currentWorkout"
     }
 
     @ModelAttribute("workout")
