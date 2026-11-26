@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/layouts/mainLayout :: layout (~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<body>
+  <div th:fragment="content">
+      <h1>Good [[${timeBasedGreeting}]] [[${user?.name}]]</h1>
+      <h3>Today's workout: [[${workoutName}]] </h3>
+
+      <a th:href="/workout?'${workoutId}'">Start Workout</a>
+  </div>
